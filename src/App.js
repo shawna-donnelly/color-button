@@ -1,6 +1,9 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
+
+export const replaceCamelWithSpaces = (colorName) => {
+  return colorName.replace(/\B([A-Z])\B/g, ` $1`);
+};
 
 const App = () => {
   const [bgColor, setBgColor] = useState("red");
@@ -9,7 +12,7 @@ const App = () => {
   return (
     <div>
       <button
-        style={{ backgroundColor: bgColor }}
+        style={{ backgroundColor: checked ? "grey" : bgColor }}
         onClick={() => {
           setBgColor(bgColor === "blue" ? "red" : "blue");
         }}
